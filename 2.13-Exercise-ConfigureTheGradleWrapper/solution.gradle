@@ -22,16 +22,16 @@ wrapper {
 
 /*
 
-4. To use the updated version of the gradle Wrapper run the following:
+4. To use the updated version of the gradle Wrapper run the following: marked
 
     $ gradle wrapper
     $ ./gradlew -v [Mac]
     $ gradlew -v [Windows]
 
-5. To get the wrapper to use the nightly build of Gradle, visit
+5. To get the wrapper to use the nightly?? build of Gradle, visit
 http://gradle.org/gradle-nightly-build/ and follow the instructions to edit your
 gradle.properties file. When you're done, your gradle.properties file should
-look something like this:
+look something like this:??
 
 #Mon Apr 06 17:32:39 PDT 2015
 distributionBase=GRADLE_USER_HOME

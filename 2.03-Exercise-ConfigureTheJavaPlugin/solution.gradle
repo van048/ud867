@@ -4,7 +4,7 @@
 
 apply plugin: 'java' // 1. Apply the Java plugin to the project
 
-sourceSets {
+sourceSets { // marked
     main {
         java {
             srcDir 'java' // 3. Add 'java' directory as a source directory
@@ -12,7 +12,7 @@ sourceSets {
     }
 }
 
-jar {
+jar { // marked
     manifest {
         attributes 'Implementation-Version': '1.0' // 2. Add manifest attribute
     }

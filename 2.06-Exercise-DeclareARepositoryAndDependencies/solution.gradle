@@ -14,5 +14,5 @@ dependencies {
 }
 
 task printDependencies << {
-    configurations.compile.each { println it.name }
+    configurations.compile.each { println it.name } // marked
 }

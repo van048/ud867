@@ -35,6 +35,8 @@ failed test is identified and a stacktrace is provided for debugging purposes.
 
 */
 
+// compile and run any appropriately annotated tests that are found in the 'test' source set. marked
+
 apply plugin: 'java'
 
 repositories {

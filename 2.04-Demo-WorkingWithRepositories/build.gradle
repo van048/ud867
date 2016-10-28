@@ -14,7 +14,7 @@ directories we want to include.
 
 repositories {
     flatDir {
-        dirs 'libs'
+        dirs 'libs' // directories marked
     }
 }
 
@@ -82,6 +82,6 @@ repositories.
 
 repositories {
     ivy {
-        url 'file:///home/user/repo'
+        url 'file:///home/user/repo' // marked
     }
 }

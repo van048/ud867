@@ -13,7 +13,7 @@ apply plugin: "java"
 
 Now if we run
 
-    gradle tasks --all
+    gradle tasks --all // marked
 
 We find a wealth of capabilities that Gradle can handle for us! There are four
 main tasks we'll use most often: assemble, check, build, and clean.
@@ -48,10 +48,10 @@ part of the core Gradle functionality.
 */
 
 
-task execute(type: JavaExec) {
+task execute(type: JavaExec) { // the JavaExec task is already part of the core Gradle functionality marked
     main = "com.udacity.gradle.Person"
     // We'll talk about this shortly
-    classpath = sourceSets.main.runtimeClasspath
+    classpath = sourceSets.main.runtimeClasspath // marked
 }
 
 /*

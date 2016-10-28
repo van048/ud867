@@ -69,6 +69,6 @@ our project somehow.
 */
 
 task copyDependencies(type: Copy) {
-    from configurations.custom
-    into 'build/libs'
+    from configurations.custom // Configurations are really just fancy file collections marked
+    into 'build/libs' // download jar marked
 }

@@ -11,16 +11,16 @@ task copyWeb(type: Copy) {
     into 'build/web'
 }
 
-task bundleWeb(type: Zip, dependsOn: copyWeb) {
+task bundleWeb(type: Zip, dependsOn: copyWeb) { // marked
     baseName = 'web'
     destinationDir = file('build')
     
     from 'build/web'
-    exclude 'images/**'
+    exclude 'images/**' // marked
 }
 
 task unpackBundle(type: Copy, dependsOn: bundleWeb) {
-    from zipTree('build/web.zip')
+    from zipTree('build/web.zip') // marked
     into 'build/exploded'
 }
 

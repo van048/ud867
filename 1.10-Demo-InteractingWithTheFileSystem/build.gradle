@@ -57,7 +57,7 @@ and all .gif files will be copied to "build/gif".
 */
 
 task copyImageFolders(type: Copy) {
-    from('images') {
+    from('images') { // marked
         include '*.jpg'
         into 'jpeg'
     }
@@ -84,7 +84,7 @@ Gradle Project interface provides a convenience method for creating files.
 
 task zipImages(type: Zip) {
     baseName = 'images'
-    destinationDir = file('build')
+    destinationDir = file('build') // marked
     from 'images'
 }
 

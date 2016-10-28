@@ -12,7 +12,7 @@ Exercises:
 
 */
 
-println 'First top level script element'
+println 'First top level script element' // marked
 
 task first {
     println 'First task: Configuration'

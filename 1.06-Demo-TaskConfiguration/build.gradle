@@ -12,7 +12,7 @@ we'll talk about shortly.
 
 */
 
-project.task("myTask1")
+project.task("myTask1") // marked
 
 /*
 
@@ -21,7 +21,7 @@ off.
 
 */
 
-task("myTask2")
+task("myTask2") // marked
 
 /*
 
@@ -43,7 +43,7 @@ http://stackoverflow.com/questions/27584463/understing-the-groovy-syntax-in-a-gr
 
 */
 
-task myTask4
+task myTask4 // marked
 
 /*
 
@@ -64,7 +64,7 @@ the end of the list using the `doLast` method.
 
 */
 
-myTask4.doLast {println "Do this last"}
+myTask4.doLast {println "Do this last"} // marked end of the list
 
 /*
 
@@ -90,7 +90,7 @@ very common pattern.
 
 */
 
-task myTask5 << {
+task myTask5 << { // marked
     println "Here's how to declare a task and give it an action in one stroke"
 }
 
@@ -101,7 +101,7 @@ also give the task a configuration closure when it's declared.
 
 */
 
-task myTask6 {
+task myTask6 { // marked
     description "Here's a task with a configuration block"
     group "Some group"
     doLast {
@@ -128,7 +128,7 @@ task myTask7 {
     description("Description") // Function call works
     //description "Description" // This is identical to the line above
     group = "Some group" // Assignment also works
-    doLast { // We can also omit the parentheses, because Groovy syntax
+    doLast { // We can also omit the parentheses, because Groovy syntax marked
         println "Here's the action"
     }
 }
@@ -140,7 +140,7 @@ using the following syntax:
 
 */
 
-task myTask8(description: "Another description") << {
+task myTask8(description: "Another description") << { // marked
     println "Doing something"
 }
 

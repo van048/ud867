@@ -76,7 +76,7 @@ argument, by default that argument is just called `it`.
 
 */
 
-myList.each{println "Compactly printing each list item: $it"}
+myList.each{println "Compactly printing each list item: $it"} // marked
 
 /*
 
@@ -88,7 +88,7 @@ getters and setters for class properties.
 
 class GroovyGreeter {
     String greeting = "Default greeting"
-    def printGreeting(){println "Greeting: $greeting"}
+    def printGreeting(){println "Greeting: $greeting"} // marked
 }
 
 def myGroovyGreeter = new GroovyGreeter()

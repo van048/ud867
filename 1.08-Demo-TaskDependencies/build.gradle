@@ -22,7 +22,7 @@ task putOnSocks {
 }
 
 task putOnShoes {
-    dependsOn "putOnSocks"
+    dependsOn "putOnSocks" // marked
     doLast {
         println "Putting on Shoes."
     }
@@ -98,7 +98,7 @@ depend on multiple tasks:
 task getReady {
     // Remember that when assigning a collection to a property, we need the
     // equals sign
-    dependsOn = ["takeShower", "eatBreakfast", "putOnShoes"]
+    dependsOn = ["takeShower", "eatBreakfast", "putOnShoes"] // marked
 }
 
 /*

@@ -46,7 +46,7 @@ that properties defined this way shadow all other definitions.
 
 */
 
-ext {
+ext { // marked what for?
     greeting = "Hello from inside the build script"
 }
 

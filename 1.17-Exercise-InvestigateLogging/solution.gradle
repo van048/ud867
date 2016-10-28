@@ -23,7 +23,7 @@ Caused by: org.gradle.api.internal.MissingMethodException: Could not find method
 
 Challenge solution:
 
-    $ gradle -b solution.gradle --debug hello | grep 'Catch me if you can'
+    $ gradle -b solution.gradle --debug hello | grep 'Catch me if you can' // marked
 
 or in Windows:
 

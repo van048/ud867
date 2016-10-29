@@ -1,7 +1,7 @@
 /*
 
 To add jokes to the product flavors, create a file named
-src/free/res/values.xml with contents:
+src/free/res/values.xml?? with contents:
 
 
 <resources>

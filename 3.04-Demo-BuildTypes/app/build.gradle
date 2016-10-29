@@ -45,7 +45,7 @@ qaTesting build types in the `buildTypes { }` script block.
 
 */
 
-android {
+android { // add new build types
     buildTypes {
         qaTesting
     }

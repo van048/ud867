@@ -44,7 +44,7 @@ To use our solution, uncomment the following line.
 
 */
 
-// apply from:"solution.gradle"
+// apply from:"solution.gradle" marked
 
 
 dependencies {

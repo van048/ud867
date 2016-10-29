@@ -8,11 +8,11 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 // This line tells the application plugin what class to run
-mainClassName = "com.udacity.gradle.JokeTeller"
+mainClassName = "com.udacity.gradle.JokeTeller" // marked
 
 /*
 
-Then use the `run` task to execute the project. Remember you can also execute
+Then use the `run` task (marked) to execute the project. Remember you can also execute
 Java using the built in JavaExec task type.
 
 */

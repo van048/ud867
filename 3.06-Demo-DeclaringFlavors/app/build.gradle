@@ -84,7 +84,7 @@ requires a new Android SDK. We can enforce that like so:
 //        minSdkVersion 23
 //    }
 //}
-
+// Any configuration that we can put in `defaultConfig { }` script block can also be placed in a flavor configuration block. marked
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

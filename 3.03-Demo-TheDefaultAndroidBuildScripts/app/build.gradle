@@ -9,7 +9,7 @@ Android Manifest. We'll talk about the `buildTypes` block momentarily.
 
 */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.application' // fetched from jcenter
 
 android {
     compileSdkVersion 24
@@ -25,7 +25,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' // marked
         }
     }
 }
@@ -39,6 +39,6 @@ library. We'll also be talking about this block more soon.
 */
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar']) // [] marked
     compile 'com.android.support:appcompat-v7:24.1.1'
 }

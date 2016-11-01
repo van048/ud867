@@ -43,9 +43,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-        Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, JokeProvider.getJoke());
-        startActivity(intent);
+        new GetJokeEndpointsAsyncTask(new GetJokeEndpointsAsyncTask.OnTaskFinishedListener() {
+            @Override
+            public void handle(String result) {
+                Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
+                intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, JokeProvider.getJoke());
+                startActivity(intent);
+            }
+        }).execute(this);
     }
 
 

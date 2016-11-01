@@ -17,13 +17,13 @@ https://docs.gradle.org/current/userguide/artifact_management.html
 
 
 // Add the 'base' plugin to all our projects to get some
-// sensible defaults such as 'clean' task and zip file names.
+// sensible defaults such as 'clean' task and zip file names???.
 allprojects {
     apply plugin: 'base'
 }
 
 // Configure 'projA' to add a new task which creates a zip archive.
-project(':projA') {
+project(':projA') { // marked
 
     configurations {
         docs
@@ -33,7 +33,7 @@ project(':projA') {
         from 'foo.txt'
     }
 
-    artifacts {
+    artifacts { // marked
         docs zip
     }
 }
@@ -47,11 +47,11 @@ project(':projB') {
 
     dependencies {
         // create a dependency to 'projA' 'docs' configuration.
-        deps project(path: ':projA', configuration: 'docs')
+        deps project(path: ':projA', configuration: 'docs') // path marked
     }
 
-    task copyDeps(type: Copy) {
+    task copyDeps(type: Copy) { // gradle tasks only have copyDeps???
         from configurations.deps
-        into "$buildDir/deps"
+        into "$buildDir/deps" // $buildDir marked
     }
 }

@@ -4,7 +4,7 @@ app, and not one, but two Java libraries!
 1. Create a new project in Android Studio, using all the defaults.
 
 2. Manually add a Java module with a class called JokeSmith with a getJoke()
-method. Feel free to supply a funny joke, or just a debug method, if
+method. Feel free to supply a funny joke, or just a debug method??, if
 you're no fun. Remember to set sourceCompatibility = 1.7, so your library is
 usable on Android. This line should be added to the build.gradle file of the
 module.
@@ -13,7 +13,7 @@ module.
 
 4. Declare a project dependency between your app and JokeSmith
 
-5. Add a text view to MainActivityFragment and populate it with a joke from
+5. Add a text view to MainActivityFragment?? and populate it with a joke from
 JokeSmith.
 
 6. Use the Android Studio wizard to add a second Java library called

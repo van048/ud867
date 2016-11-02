@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -20,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
     private static final String MY_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd mInterstitialAd;
     private GetJokeEndpointsAsyncTask mGetJokeEndpointsAsyncTask;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,10 @@ public class MainActivity extends ActionBarActivity {
         // Create the mInterstitialAd.
         mInterstitialAd = new InterstitialAd(MainActivity.this);
         mInterstitialAd.setAdUnitId(MY_AD_UNIT_ID);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mProgressBar.setIndeterminate(true);
+        mProgressBar.setVisibility(View.INVISIBLE);
     }
 
 
@@ -89,10 +95,12 @@ public class MainActivity extends ActionBarActivity {
                         startActivity(intent);
 
                         mGetJokeEndpointsAsyncTask = null;
+                        mProgressBar.setVisibility(View.INVISIBLE);
                     }
                 });
             }
         });
+        mProgressBar.setVisibility(View.VISIBLE);
         mGetJokeEndpointsAsyncTask.execute(this);
     }
 

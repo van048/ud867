@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import cn.ben.JokeDisplayActivity;
@@ -13,11 +14,16 @@ import cn.ben.JokeDisplayActivity;
 
 public class MainActivity extends ActionBarActivity {
     private GetJokeEndpointsAsyncTask mGetJokeEndpointsAsyncTask;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mProgressBar.setIndeterminate(true);
+        mProgressBar.setVisibility(View.INVISIBLE);
     }
 
 
@@ -56,8 +62,10 @@ public class MainActivity extends ActionBarActivity {
                 intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, result);
                 startActivity(intent);
                 mGetJokeEndpointsAsyncTask = null;
+                mProgressBar.setVisibility(View.INVISIBLE);
             }
         });
+        mProgressBar.setVisibility(View.VISIBLE);
         mGetJokeEndpointsAsyncTask.execute(this);
     }
 

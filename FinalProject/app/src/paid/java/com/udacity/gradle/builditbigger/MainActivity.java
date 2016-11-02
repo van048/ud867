@@ -12,6 +12,7 @@ import cn.ben.JokeProvider;
 
 
 public class MainActivity extends ActionBarActivity {
+    private GetJokeEndpointsAsyncTask mGetJokeEndpointsAsyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,18 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-        new GetJokeEndpointsAsyncTask(new GetJokeEndpointsAsyncTask.OnTaskFinishedListener() {
+        // should check whether a task is running
+        if (mGetJokeEndpointsAsyncTask != null) {
+            Toast.makeText(this, "Task is running!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mGetJokeEndpointsAsyncTask = new GetJokeEndpointsAsyncTask(new GetJokeEndpointsAsyncTask.OnTaskFinishedListener() {
             @Override
             public void handle(String result) {
                 Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
                 intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, JokeProvider.getJoke());
                 startActivity(intent);
+                mGetJokeEndpointsAsyncTask = null;
             }
         }).execute(this);
     }

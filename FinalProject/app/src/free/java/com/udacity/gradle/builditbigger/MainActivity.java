@@ -19,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String MY_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd mInterstitialAd;
+    private GetJokeEndpointsAsyncTask mGetJokeEndpointsAsyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,11 @@ public class MainActivity extends ActionBarActivity {
 
     public void tellJoke(View view) {
         // should check whether a task is running
-        new GetJokeEndpointsAsyncTask(new GetJokeEndpointsAsyncTask.OnTaskFinishedListener() {
+        if (mGetJokeEndpointsAsyncTask != null) {
+            Toast.makeText(this, "Task is running!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mGetJokeEndpointsAsyncTask = new GetJokeEndpointsAsyncTask(new GetJokeEndpointsAsyncTask.OnTaskFinishedListener() {
             @Override
             public void handle(final String result) {
                 // Create ad request.
@@ -82,10 +87,13 @@ public class MainActivity extends ActionBarActivity {
                         Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
                         intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, result);
                         startActivity(intent);
+
+                        mGetJokeEndpointsAsyncTask = null;
                     }
                 });
             }
-        }).execute(this);
+        });
+        mGetJokeEndpointsAsyncTask.execute(this);
     }
 
 

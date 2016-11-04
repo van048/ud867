@@ -12,10 +12,9 @@ import java.io.IOException;
 
 import cn.ben.joke.backend.myApi.MyApi;
 
-public class GetJokeEndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+class GetJokeEndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
-    private Context context;
-    private OnTaskFinishedListener mOnTaskFinishedListener;
+    private final OnTaskFinishedListener mOnTaskFinishedListener;
 
     public GetJokeEndpointsAsyncTask(OnTaskFinishedListener onTaskFinishedListener) {
         mOnTaskFinishedListener = onTaskFinishedListener;
@@ -41,8 +40,6 @@ public class GetJokeEndpointsAsyncTask extends AsyncTask<Context, Void, String> 
 
             myApiService = builder.build();
         }
-
-        context = params[0];
 
         try {
             return myApiService.getJoke().execute().getData();

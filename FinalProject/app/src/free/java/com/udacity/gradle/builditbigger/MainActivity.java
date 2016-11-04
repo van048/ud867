@@ -2,7 +2,7 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +16,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import cn.ben.JokeDisplayActivity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String MY_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
     private InterstitialAd mInterstitialAd;
@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
+    public void tellJoke(@SuppressWarnings("UnusedParameters") View view) {
         // should check whether a task is running
         if (mGetJokeEndpointsAsyncTask != null) {
             Toast.makeText(this, "Task is running!", Toast.LENGTH_SHORT).show();

@@ -8,8 +8,9 @@ import java.util.concurrent.CountDownLatch;
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
+@SuppressWarnings("deprecation")
 public class ApplicationTest extends ApplicationTestCase<Application> {
-    CountDownLatch mCountDownLatch = null;
+    private CountDownLatch mCountDownLatch = null;
 
     public ApplicationTest() {
         super(Application.class);

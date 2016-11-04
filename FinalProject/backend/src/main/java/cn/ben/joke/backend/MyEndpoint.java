@@ -17,6 +17,7 @@ import cn.ben.JokeProvider;
 /**
  * An endpoint class we are exposing
  */
+@SuppressWarnings("DefaultAnnotationParam")
 @Api(
         name = "myApi",
         version = "v1",
